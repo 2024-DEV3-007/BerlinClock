@@ -1,11 +1,23 @@
 package com.bnpp.kata.berlinclock.service;
 
+import com.bnpp.kata.berlinclock.model.BerlinClockResponse;
+import com.bnpp.kata.berlinclock.model.DetailedBerlinTime;
+import com.bnpp.kata.berlinclock.model.TimeComponent;
 import org.springframework.stereotype.Service;
 
 @Service
 public class BerlinClockService {
 	
-    public String convertToBerlinTime(String time) {
-        return (Integer.parseInt(time) % 2 == 0) ? "Y" : "O";
+    public BerlinClockResponse convertToBerlinTime(TimeComponent time) {
+
+        String secondsLamp = getSecondsLamp(time);
+
+        return BerlinClockResponse.builder()
+                .detailedBerlinTime(DetailedBerlinTime.builder().secondsLamp(secondsLamp).build())
+                .build();
+    }
+
+    private static String getSecondsLamp(TimeComponent time) {
+        return (Integer.parseInt(time.getSeconds()) % 2 == 0) ? "Y" : "O";
     }
 }
