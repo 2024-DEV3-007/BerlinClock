@@ -11,10 +11,16 @@ public class BerlinClockService {
     public BerlinClockResponse convertToBerlinTime(TimeComponent time) {
 
         String secondsLamp = getSecondsLamp(time);
+        String hourLamp = getHoursLamp(time);
 
         return BerlinClockResponse.builder()
-                .detailedBerlinTime(DetailedBerlinTime.builder().secondsLamp(secondsLamp).build())
+                .detailedBerlinTime(DetailedBerlinTime.builder().secondsLamp(secondsLamp).build()
+                        .topFiveHourLamps(hourLamp))
                 .build();
+    }
+
+    private String getHoursLamp(TimeComponent time) {
+        return "OOOO";
     }
 
     private static String getSecondsLamp(TimeComponent time) {
