@@ -20,7 +20,16 @@ public class BerlinClockService {
     }
 
     private String getHoursLamp(TimeComponent time) {
-        return "OOOO";
+
+        int hours = Integer.parseInt(time.getHours());
+        String hourLamp;
+
+        if (hours >= 5 && hours <= 9)
+            hourLamp = "ROOO";
+        else
+            hourLamp = "OOOO";
+
+        return hourLamp;
     }
 
     private static String getSecondsLamp(TimeComponent time) {
