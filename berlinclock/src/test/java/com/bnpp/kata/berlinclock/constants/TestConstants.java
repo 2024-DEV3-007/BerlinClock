@@ -25,4 +25,5 @@ public class TestConstants {
     public static final String THIRD_LAMP_RED_OUT_OF_ELEVEN = "YYROOOOOOOO";
     public static final String FIVE_MINT_FOURLAMPON = "YYRYOOOOOOO";
     public static final String FIRST_LAMP_YELLOW = "YOOO";
+    public static final String FIRST_TWO_LAMPS_YELLOW = "YYOO";
 }
