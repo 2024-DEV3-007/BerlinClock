@@ -15,11 +15,18 @@ public class BerlinClockService {
 
         String secondsLamp = getSecondsLamp(time);
         String hourLamp = getHoursLamp(time);
+        String oneHourLamp = getOneHourLamp(time);
 
         return BerlinClockResponse.builder()
-                .detailedBerlinTime(DetailedBerlinTime.builder().secondsLamp(secondsLamp).build()
-                        .topFiveHourLamps(hourLamp))
+                .detailedBerlinTime(DetailedBerlinTime.builder()
+                        .secondsLamp(secondsLamp)
+                        .topFiveHourLamps(hourLamp)
+                        .bottomOneHourLamps(oneHourLamp).build())
                 .build();
+    }
+
+    private String getOneHourLamp(TimeComponent time) {
+        return "OOOO";
     }
 
     private String getHoursLamp(TimeComponent time) {
