@@ -237,4 +237,15 @@ public class BerlinClockServiceTest {
 
         assertThat(response.getDetailedBerlinTime().getBottomOneMinuteLamps()).isEqualTo(FIRST_TWO_LAMPS_YELLOW);
     }
+
+    @Test
+    @DisplayName("One Minute Row : first three lamps should be YELLOW when minute divided by 5 has reminder 3")
+    public void convertToBerlinTime_whenMinuteDividedByFiveHasRemainderThree_firstThreeLampShouldBeYellow() {
+
+        TimeComponent timeComponent = TimeComponent.builder().hours(ZERO).minutes(EIGHTEEN).seconds(ZERO).build();
+
+        BerlinClockResponse response = berlinClockService.convertToBerlinTime(timeComponent);
+
+        assertThat(response.getDetailedBerlinTime().getBottomOneMinuteLamps()).isEqualTo(FIRST_THREE_LAMPS_YELLOW);
+    }
 }
