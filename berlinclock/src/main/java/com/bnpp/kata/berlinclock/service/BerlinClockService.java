@@ -30,7 +30,12 @@ public class BerlinClockService {
         int minutes = Integer.parseInt(time.getMinutes());
         StringBuilder lamps = new StringBuilder();
 
-        if (minutes >= 10 && minutes < 15) {
+        if (minutes == 15) {
+            lamps.append(Lamp.YELLOW.getValue());
+            lamps.append(Lamp.YELLOW.getValue());
+            lamps.append(Lamp.YELLOW.getValue());
+        }
+        else if (minutes >= 10 && minutes < 15) {
             lamps.append(Lamp.YELLOW.getValue());
             lamps.append(Lamp.YELLOW.getValue());
         }
@@ -41,7 +46,7 @@ public class BerlinClockService {
             lamps.append(Lamp.OFF.getValue());
         }
 
-        return lamps.toString();
+        return lamps.toString().replace("YYY", "YYR");
     }
 
     private DetailedBerlinTime createDetailedBerlinTime(String secondsLamp, String hourLamp, String oneHourLamp, String fiveMinuteLamp) {
