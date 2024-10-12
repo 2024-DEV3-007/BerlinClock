@@ -27,7 +27,16 @@ public class BerlinClockService {
     }
 
     private String getOneMinuteLamp(TimeComponent time) {
-        return "OOOO";
+
+        int minutes = Integer.parseInt(time.getMinutes());
+        String mintLamps ;
+
+        if (minutes % 5 == 1)
+            mintLamps = "YOOO";
+        else
+            mintLamps = "OOOO";
+
+        return mintLamps;
     }
 
     private String getMinuteLamp(TimeComponent time) {
