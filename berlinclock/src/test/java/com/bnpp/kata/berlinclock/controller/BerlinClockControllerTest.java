@@ -58,4 +58,13 @@ public class BerlinClockControllerTest {
                         .content(new ObjectMapper().writeValueAsString(request)))
                 .andExpect(status().isBadRequest());
     }
+
+    @Test
+    @DisplayName("Rest API should throw internal server error when null request is passed")
+    public void calculateBerlinClockTime_passNullRequest_shouldReturnInternalServerError() throws Exception {
+
+        mockMvc.perform(post(API_PATH).contentType(MediaType.APPLICATION_JSON)
+                        .content(new ObjectMapper().writeValueAsString(null)))
+                .andExpect(status().isInternalServerError());
+    }
 }
