@@ -18,4 +18,5 @@ public class Constants {
     public static final String TIME_SEPARATOR = ":";
     public static final String TIME_FORMAT = "%02d";
     public static final String DELIMITER = " ";
+    public static final String INVALID_REQUEST = "Invalid Request";
 }

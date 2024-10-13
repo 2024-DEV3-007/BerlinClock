@@ -47,4 +47,15 @@ public class BerlinClockControllerTest {
                         .content(new ObjectMapper().writeValueAsString(request)))
                 .andExpect(status().isBadRequest());
     }
+
+    @Test
+    @DisplayName("Rest API should throw exception when request contains null time")
+    public void convertTime_requestContainsNullTime_shouldReturnBadRequest() throws Exception {
+
+        BerlinClockRequest request = BerlinClockRequest.builder().time(null).build();
+
+        mockMvc.perform(post(API_PATH).contentType(MediaType.APPLICATION_JSON)
+                        .content(new ObjectMapper().writeValueAsString(request)))
+                .andExpect(status().isBadRequest());
+    }
 }
