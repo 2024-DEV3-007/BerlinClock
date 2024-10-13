@@ -36,4 +36,5 @@ public class TestConstants {
     public static final String BERLIN_TIME = "O RRRR RRRO YYRYYRYYRYY YYYY";
     public static final String ZERO_BERLIN_TIME = "Y OOOO OOOO OOOOOOOOOOO OOOO";
     public static final String FORTEEN_BERLIN_TIME = "O RROO RRRR YYRYOOOOOOO YYYY";
+    public static final String API_PATH =  "/api/berlinclock";
 }
