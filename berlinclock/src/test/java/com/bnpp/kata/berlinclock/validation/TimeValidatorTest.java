@@ -52,4 +52,13 @@ public class TimeValidatorTest {
 
         assertThrows(TimeFormatException.class, () -> timeValidator.validateTimeValues(timeComponent));
     }
+
+    @Test
+    @DisplayName("Throw Time Format Exception : if the input hour is less than 0")
+    public void convertToBerlinTime_passHourLessThanZero_shouldThrowTimeFormatException() {
+
+        TimeComponent timeComponent = TimeComponent.builder().hours(MINUS_ONE).minutes(ZERO).seconds(ZERO).build();
+
+        assertThrows(TimeFormatException.class, () -> timeValidator.validateTimeValues(timeComponent));
+    }
 }
