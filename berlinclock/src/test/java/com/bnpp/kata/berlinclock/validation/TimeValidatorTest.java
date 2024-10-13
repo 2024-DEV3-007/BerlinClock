@@ -25,4 +25,13 @@ public class TimeValidatorTest {
 
         assertThrows(TimeFormatException.class, () -> timeValidator.validateTimeValues(timeComponent));
     }
+
+    @Test
+    @DisplayName("Throw Time Format Exception : if the input minutes are empty")
+    public void validateTimeValues_checkWhetherTheInputMinutesAreNotEmpty_shouldThrowTimeFormatException() {
+
+        TimeComponent timeComponent = TimeComponent.builder().hours(ZERO).minutes(EMPTY).seconds(ZERO).build();
+
+        assertThrows(TimeFormatException.class, () -> timeValidator.validateTimeValues(timeComponent));
+    }
 }

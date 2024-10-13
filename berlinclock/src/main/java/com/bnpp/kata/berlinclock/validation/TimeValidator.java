@@ -10,7 +10,8 @@ import static com.bnpp.kata.berlinclock.constants.Constants.*;
 public class TimeValidator {
 
     public void validateTimeValues(TimeComponent time) {
-        if (StringUtils.isEmpty(time.getHours())) {
+
+        if (StringUtils.isEmpty(time.getHours()) || StringUtils.isEmpty(time.getMinutes())) {
             throw new TimeFormatException(TIME_IS_EMPTY_ERROR);
         }
     }
