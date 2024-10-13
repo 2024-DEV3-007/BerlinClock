@@ -260,4 +260,15 @@ public class BerlinClockServiceTest {
 
         assertThat(response.getDetailedBerlinTime().getBottomOneMinuteLamps()).isEqualTo(ALL_FOUR_LAMPS_YELLOW);
     }
+
+    @Test
+    @DisplayName("Display Digital Time in the response")
+    public void convertToBerlinTime_passTimeComponents_responseShouldContainDigitalTime() {
+
+        TimeComponent timeComponent = TimeComponent.builder().hours(FOURTEEN).minutes(TWENTYTHREE).seconds(FIVE).build();
+
+        BerlinClockResponse response = berlinClockService.convertToBerlinTime(timeComponent);
+
+        assertThat(response.getDigitalTime()).isEqualTo(DIGITAL_TIME);
+    }
 }
