@@ -50,7 +50,7 @@ public class BerlinClockControllerTest {
 
     @Test
     @DisplayName("Rest API should throw exception when request contains null time")
-    public void convertTime_requestContainsNullTime_shouldReturnBadRequest() throws Exception {
+    public void calculateBerlinClockTime_requestContainsNullTime_shouldReturnBadRequest() throws Exception {
 
         BerlinClockRequest request = BerlinClockRequest.builder().time(null).build();
 
