@@ -271,4 +271,15 @@ public class BerlinClockServiceTest {
 
         assertThat(response.getDigitalTime()).isEqualTo(DIGITAL_TIME);
     }
+
+    @Test
+    @DisplayName("Display Berlin Time in the response")
+    public void convertToBerlinTime_passTimeComponents_responseShouldContainBerlinTime() {
+
+        TimeComponent timeComponent = TimeComponent.builder().hours(TWENTYTHREE).minutes(FIFTYNINE).seconds(FIFTYNINE).build();
+
+        BerlinClockResponse response = berlinClockService.convertToBerlinTime(timeComponent);
+
+        assertThat(response.getBerlinTime()).isEqualTo(BERLIN_TIME);
+    }
 }

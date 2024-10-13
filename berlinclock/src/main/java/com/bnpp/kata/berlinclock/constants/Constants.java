@@ -17,4 +17,5 @@ public class Constants {
     public static final int MAX_SECONDS = 59;
     public static final String TIME_SEPARATOR = ":";
     public static final String TIME_FORMAT = "%02d";
+    public static final String DELIMITER = " ";
 }
