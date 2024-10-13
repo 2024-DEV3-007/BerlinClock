@@ -43,4 +43,13 @@ public class TimeValidatorTest {
 
         assertThrows(TimeFormatException.class, () -> timeValidator.validateTimeValues(timeComponent));
     }
+
+    @Test
+    @DisplayName("Throw Time Format Exception : if the input hour is greater than 23")
+    public void validateTimeValues_passHourGreaterThan23_shouldThrowTimeFormatException() {
+
+        TimeComponent timeComponent = TimeComponent.builder().hours(SEVENTY).minutes(ZERO).seconds(ZERO).build();
+
+        assertThrows(TimeFormatException.class, () -> timeValidator.validateTimeValues(timeComponent));
+    }
 }
