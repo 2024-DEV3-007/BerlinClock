@@ -12,6 +12,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static com.bnpp.kata.berlinclock.constants.TestConstants.*;
 
@@ -33,6 +34,7 @@ public class BerlinClockControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(new ObjectMapper().writeValueAsString(request)))
                 .andExpect(status().isOk())
+                .andExpect(jsonPath("$.berlinTime").isNotEmpty())
                 .andExpect(result -> assertNotNull(result.getResponse().getContentAsString()));
     }
 
