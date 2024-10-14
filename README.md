@@ -23,6 +23,20 @@ The Berlin Clock (Mengenlehreclock or Berlin Uhr) is a clock that tells the time
 - **Maven** : For Dependency management
 - **JUnit** : 5.x
 
+## Commit Message Style Guide
+The project have followed the [Udacity Git Commit Message Style Guide](https://udacity.github.io/git-styleguide/), which provides a consistent format for writing commit messages.
+Each commit messages contains **Title**. The title consists of the type of the message and subject. `type: Subject`
+
+#### Commit Types
+
+- **feat**: A new feature
+- **fix**: A bug fix
+- **docs**: Changes to documentation
+- **style**: Code formatting changes (e.g., fixing indentation, removing spaces, etc.)
+- **refactor**: Code refactoring without affecting functionality
+- **test**: Adding or refactoring tests
+- **chore**: Updates to build processes or auxiliary tools (e.g., package manager configs)
+
 ## How to Build the Application
 
 - Clone this repository:
