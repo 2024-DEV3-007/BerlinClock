@@ -24,7 +24,7 @@ public class BerlinClockController {
     @PostMapping("${berlinclock.endpoint.calculateBerlinClockTime}")
     public ResponseEntity<BerlinClockResponse> calculateBerlinClockTime(@RequestBody BerlinClockRequest request) {
 
-        if (Objects.nonNull(request.getTime())) {
+       if (Objects.nonNull(request) && Objects.nonNull(request.getTime())) {
             return new ResponseEntity<>(berlinClockService.convertToBerlinTime(request.getTime()), HttpStatus.OK);
         }
         

@@ -10,7 +10,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static com.bnpp.kata.berlinclock.constants.TestConstants.*;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class ParameterizedServiceTest {
+class ParameterizedServiceTest {
 
     private BerlinClockService berlinClockService;
 
@@ -27,7 +27,7 @@ public class ParameterizedServiceTest {
             "00, 00, 0, " + ZERO_BERLIN_TIME,
             "14, 24, 5, " + FORTEEN_BERLIN_TIME
     })
-    public void convertToBerlinTime_passHoursMinutesSeconds_responseShouldContainBerlinTime(String hour, String minute, String second, String expectedBerlinTime) {
+    void convertToBerlinTime_passHoursMinutesSeconds_responseShouldContainBerlinTime(String hour, String minute, String second, String expectedBerlinTime) {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(hour).minutes(minute).seconds(second).build();
 

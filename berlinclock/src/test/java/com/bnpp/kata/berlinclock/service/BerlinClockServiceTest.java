@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static com.bnpp.kata.berlinclock.constants.TestConstants.*;
 
-public class BerlinClockServiceTest {
+class BerlinClockServiceTest {
 
     private BerlinClockService berlinClockService;
 
@@ -21,7 +21,7 @@ public class BerlinClockServiceTest {
 
     @Test
     @DisplayName("Seconds Lamp : should be ON for even seconds")
-    public void convertToBerlinTime_passEvenSeconds_secondsLampShouldBeON() {
+    void convertToBerlinTime_passEvenSeconds_secondsLampShouldBeON() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(ZERO).minutes(ZERO).seconds(TWO).build();
 
@@ -32,7 +32,7 @@ public class BerlinClockServiceTest {
 
     @Test
     @DisplayName("Seconds Lamp : should be OFF for odd seconds")
-    public void convertToBerlinTime_passOddSeconds_secondsLampShouldBeOFF() {
+    void convertToBerlinTime_passOddSeconds_secondsLampShouldBeOFF() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(ZERO).minutes(ZERO).seconds(FIVE).build();
 
@@ -43,7 +43,7 @@ public class BerlinClockServiceTest {
 
     @Test
     @DisplayName("Five Hour Row : should be OFF when given hour is less than 5")
-    public void convertToBerlinTime_passHoursLessThanFive_allFiveHourLampShouldBeOFF() {
+    void convertToBerlinTime_passHoursLessThanFive_allFiveHourLampShouldBeOFF() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(TWO).minutes(ZERO).seconds(ZERO).build();
 
@@ -54,7 +54,7 @@ public class BerlinClockServiceTest {
 
     @Test
     @DisplayName("Five Hour Row : first lamp should be RED when given hour is between 5 and 9")
-    public void convertToBerlinTime_passHoursBetweenFiveAndNine_firstLampOfFiveHourRowShouldBeRED() {
+    void convertToBerlinTime_passHoursBetweenFiveAndNine_firstLampOfFiveHourRowShouldBeRED() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(SIX).minutes(ZERO).seconds(ZERO).build();
 
@@ -65,7 +65,7 @@ public class BerlinClockServiceTest {
 
     @Test
     @DisplayName("Five Hour Row : first two lamps should be RED when given hour is between 10 and 14")
-    public void convertToBerlinTime_passHoursBetweenTenAndFourteen_firstTwoLampsOfFiveHourRowShouldBeRED() {
+    void convertToBerlinTime_passHoursBetweenTenAndFourteen_firstTwoLampsOfFiveHourRowShouldBeRED() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(TWELVE).minutes(ZERO).seconds(ZERO).build();
 
@@ -76,7 +76,7 @@ public class BerlinClockServiceTest {
 
     @Test
     @DisplayName("Five Hour Row : first three lamps should be RED when given hour is between 15 and 19")
-    public void convertToBerlinTime_passHoursBetweenFifteenAndNineteen_firstThreeLampsOfFiveHourRowShouldBeRED() {
+    void convertToBerlinTime_passHoursBetweenFifteenAndNineteen_firstThreeLampsOfFiveHourRowShouldBeRED() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(EIGHTEEN).minutes(ZERO).seconds(ZERO).build();
 
@@ -87,7 +87,7 @@ public class BerlinClockServiceTest {
 
     @Test
     @DisplayName("Five Hour Row : all lamps should be RED when given hour is between 20 and 23")
-    public void convertToBerlinTime_passHoursBetweenTwentyToTwentyThree_allLampsOfFiveHourRowShouldBeRED() {
+    void convertToBerlinTime_passHoursBetweenTwentyToTwentyThree_allLampsOfFiveHourRowShouldBeRED() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(TWENTYTHREE).minutes(ZERO).seconds(ZERO).build();
 
@@ -98,7 +98,7 @@ public class BerlinClockServiceTest {
 
     @Test
     @DisplayName("One Hour Row : should be OFF when given hour is divisible by 5")
-    public void convertToBerlinTime_passHoursDivisibleByFive_allLampOfOneHourRowShouldBeOFF() {
+    void convertToBerlinTime_passHoursDivisibleByFive_allLampOfOneHourRowShouldBeOFF() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(FIVE).minutes(ZERO).seconds(ZERO).build();
 
@@ -109,7 +109,7 @@ public class BerlinClockServiceTest {
 
     @Test
     @DisplayName("One Hour Row : first lamp should be RED when hour divided by 5 has reminder 1")
-    public void convertToBerlinTime_whenHourDividedByFiveHasRemainderOne_firstLampShouldBeRED() {
+    void convertToBerlinTime_whenHourDividedByFiveHasRemainderOne_firstLampShouldBeRED() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(SIX).minutes(ZERO).seconds(ZERO).build();
 
@@ -120,7 +120,7 @@ public class BerlinClockServiceTest {
 
     @Test
     @DisplayName("One Hour Row : first two lamps should be RED when hour divided by 5 has reminder 2")
-    public void convertToBerlinTime_whenHourDividedByFiveHasRemainderTwo_firstTwoLampsShouldBeRED() {
+    void convertToBerlinTime_whenHourDividedByFiveHasRemainderTwo_firstTwoLampsShouldBeRED() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(TWELVE).minutes(ZERO).seconds(ZERO).build();
 
@@ -131,7 +131,7 @@ public class BerlinClockServiceTest {
 
     @Test
     @DisplayName("One Hour Row : first three lamps should be RED when hour divided by 5 has reminder 3")
-    public void convertToBerlinTime_whenHourDividedByFiveHasRemainderThree_firstThreeLampsShouldBeRED() {
+    void convertToBerlinTime_whenHourDividedByFiveHasRemainderThree_firstThreeLampsShouldBeRED() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(EIGHTEEN).minutes(ZERO).seconds(ZERO).build();
 
@@ -142,7 +142,7 @@ public class BerlinClockServiceTest {
 
     @Test
     @DisplayName("One Hour Row : all lamps should be RED when hour divided by 5 has reminder 4")
-    public void convertToBerlinTime_whenHourDividedByFiveHasRemainderFour_allLampsShouldBeRED() {
+    void convertToBerlinTime_whenHourDividedByFiveHasRemainderFour_allLampsShouldBeRED() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(FOURTEEN).minutes(ZERO).seconds(ZERO).build();
 
@@ -153,7 +153,7 @@ public class BerlinClockServiceTest {
 
     @Test
     @DisplayName("Five Minute Row : should be OFF when given minute is less than 5")
-    public void convertToBerlinTime_passMinuteLessThanFive_allLampsOfFiveMinuteRowShouldBeOFF() {
+    void convertToBerlinTime_passMinuteLessThanFive_allLampsOfFiveMinuteRowShouldBeOFF() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(ZERO).minutes(TWO).seconds(ZERO).build();
 
@@ -164,7 +164,7 @@ public class BerlinClockServiceTest {
 
     @Test
     @DisplayName("Five Minute Row : first lamp should be YELLOW when given minute is between 5 and 9")
-    public void convertToBerlinTime_passMinuteBetweenFiveAndNine_firstLampOfFiveMinuteRowShouldBeYellow() {
+    void convertToBerlinTime_passMinuteBetweenFiveAndNine_firstLampOfFiveMinuteRowShouldBeYellow() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(ZERO).minutes(SIX).seconds(ZERO).build();
 
@@ -175,7 +175,7 @@ public class BerlinClockServiceTest {
 
     @Test
     @DisplayName("Five Minute Row : first two lamps should be YELLOW when given minute is between 10 and 14")
-    public void convertToBerlinTime_passMinutesBetweenTenAndFifteen_firstTwoLampsOfFiveMinuteRowShouldBeYellow() {
+    void convertToBerlinTime_passMinutesBetweenTenAndFifteen_firstTwoLampsOfFiveMinuteRowShouldBeYellow() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(ZERO).minutes(TWELVE).seconds(ZERO).build();
 
@@ -186,7 +186,7 @@ public class BerlinClockServiceTest {
 
     @Test
     @DisplayName("Five Minute Row : third lamp should be RED when given minute is 15")
-    public void convertToBerlinTime_passMinuteFifteen_thirdLampOfFiveMinuteRowShouldBeRed() {
+    void convertToBerlinTime_passMinuteFifteen_thirdLampOfFiveMinuteRowShouldBeRed() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(ZERO).minutes(FIFTEEN).seconds(ZERO).build();
 
@@ -197,7 +197,7 @@ public class BerlinClockServiceTest {
 
     @Test
     @DisplayName("Five Minute Row : lamps should be YELLOW based on minutes divisible by 5; every third lamp should be RED")
-    public void convertToBerlinTime_whenMinutesDivisibleByFive_lampsShouldBeYellowWithThirdLampRed() {
+    void convertToBerlinTime_whenMinutesDivisibleByFive_lampsShouldBeYellowWithThirdLampRed() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(ZERO).minutes(TWENTY).seconds(ZERO).build();
 
@@ -208,7 +208,7 @@ public class BerlinClockServiceTest {
 
     @Test
     @DisplayName("One Minute Row : should be OFF when given minute is divisible by 5")
-    public void convertToBerlinTime_passMinuteDivisibleByFive_allLampsOfOneMinuteRowShouldBeOFF() {
+    void convertToBerlinTime_passMinuteDivisibleByFive_allLampsOfOneMinuteRowShouldBeOFF() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(ZERO).minutes(FIVE).seconds(ZERO).build();
 
@@ -219,7 +219,7 @@ public class BerlinClockServiceTest {
 
     @Test
     @DisplayName("One Minute Row : first lamp should be YELLOW when minute divided by 5 has reminder 1")
-    public void convertToBerlinTime_whenMinuteDividedByFiveHasRemainderOne_firstLampShouldBeYellow() {
+    void convertToBerlinTime_whenMinuteDividedByFiveHasRemainderOne_firstLampShouldBeYellow() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(ZERO).minutes(SIX).seconds(ZERO).build();
 
@@ -230,7 +230,7 @@ public class BerlinClockServiceTest {
 
     @Test
     @DisplayName("One Minute Row : first two lamps should be YELLOW when minute divided by 5 has reminder 2")
-    public void convertToBerlinTime_whenMinuteDividedByFiveHasRemainderTwo_firstTwoLampsShouldBeYellow() {
+    void convertToBerlinTime_whenMinuteDividedByFiveHasRemainderTwo_firstTwoLampsShouldBeYellow() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(ZERO).minutes(TWELVE).seconds(ZERO).build();
 
@@ -241,7 +241,7 @@ public class BerlinClockServiceTest {
 
     @Test
     @DisplayName("One Minute Row : first three lamps should be YELLOW when minute divided by 5 has reminder 3")
-    public void convertToBerlinTime_whenMinuteDividedByFiveHasRemainderThree_firstThreeLampShouldBeYellow() {
+    void convertToBerlinTime_whenMinuteDividedByFiveHasRemainderThree_firstThreeLampShouldBeYellow() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(ZERO).minutes(EIGHTEEN).seconds(ZERO).build();
 
@@ -252,7 +252,7 @@ public class BerlinClockServiceTest {
 
     @Test
     @DisplayName("One Minute Row : all lamps should be YELLOW when minute divided by 5 has reminder 4")
-    public void convertToBerlinTime_whenMinuteDividedByFiveHasRemainderFour_allLampsShouldBeYellow() {
+    void convertToBerlinTime_whenMinuteDividedByFiveHasRemainderFour_allLampsShouldBeYellow() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(ZERO).minutes(FOURTEEN).seconds(ZERO).build();
 
@@ -263,7 +263,7 @@ public class BerlinClockServiceTest {
 
     @Test
     @DisplayName("Display Digital Time in the response")
-    public void convertToBerlinTime_passTimeComponents_responseShouldContainDigitalTime() {
+    void convertToBerlinTime_passTimeComponents_responseShouldContainDigitalTime() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(FOURTEEN).minutes(TWENTYTHREE).seconds(FIVE).build();
 
@@ -274,7 +274,7 @@ public class BerlinClockServiceTest {
 
     @Test
     @DisplayName("Display Berlin Time in the response")
-    public void convertToBerlinTime_passTimeComponents_responseShouldContainBerlinTime() {
+    void convertToBerlinTime_passTimeComponents_responseShouldContainBerlinTime() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(TWENTYTHREE).minutes(FIFTYNINE).seconds(FIFTYNINE).build();
 

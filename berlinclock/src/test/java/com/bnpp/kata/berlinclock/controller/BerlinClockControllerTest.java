@@ -18,14 +18,14 @@ import static com.bnpp.kata.berlinclock.constants.TestConstants.*;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class BerlinClockControllerTest {
+class BerlinClockControllerTest {
 
     @Autowired
     MockMvc mockMvc;
 
     @Test
     @DisplayName("Rest API to calculate Berlin Time should return valid response")
-    public void calculateBerlinClockTime_validRequest_shouldReturnBerlinClockResponse() throws Exception {
+    void calculateBerlinClockTime_validRequest_shouldReturnBerlinClockResponse() throws Exception {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(TWENTYTHREE).minutes(FIFTYNINE).seconds(FIFTYNINE).build();
         BerlinClockRequest request = BerlinClockRequest.builder().time(timeComponent).build();
@@ -40,7 +40,7 @@ public class BerlinClockControllerTest {
 
     @Test
     @DisplayName("Rest API should throw exception when invalid input is passed")
-    public void calculateBerlinClockTime_passInvalidInputRequest_shouldReturnBadRequest() throws Exception {
+    void calculateBerlinClockTime_passInvalidInputRequest_shouldReturnBadRequest() throws Exception {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(EMPTY).minutes(FIFTYNINE).seconds(FIFTYNINE).build();
         BerlinClockRequest request = BerlinClockRequest.builder().time(timeComponent).build();
@@ -52,7 +52,7 @@ public class BerlinClockControllerTest {
 
     @Test
     @DisplayName("Rest API should throw exception when request contains null time")
-    public void calculateBerlinClockTime_requestContainsNullTime_shouldReturnBadRequest() throws Exception {
+    void calculateBerlinClockTime_requestContainsNullTime_shouldReturnBadRequest() throws Exception {
 
         BerlinClockRequest request = BerlinClockRequest.builder().time(null).build();
 
@@ -63,7 +63,7 @@ public class BerlinClockControllerTest {
 
     @Test
     @DisplayName("Rest API should throw internal server error when null request is passed")
-    public void calculateBerlinClockTime_passNullRequest_shouldReturnInternalServerError() throws Exception {
+    void calculateBerlinClockTime_passNullRequest_shouldReturnInternalServerError() throws Exception {
 
         mockMvc.perform(post(API_PATH).contentType(MediaType.APPLICATION_JSON)
                         .content(new ObjectMapper().writeValueAsString(null)))

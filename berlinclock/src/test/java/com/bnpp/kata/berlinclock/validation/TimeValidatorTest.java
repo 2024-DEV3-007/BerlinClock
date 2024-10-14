@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import static com.bnpp.kata.berlinclock.constants.TestConstants.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class TimeValidatorTest {
+class TimeValidatorTest {
 
     private TimeValidator timeValidator;
 
@@ -19,7 +19,7 @@ public class TimeValidatorTest {
 
     @Test
     @DisplayName("Throw Time Format Exception : if the input hours are empty")
-    public void validateTimeValues_checkWhetherTheInputHoursAreNotEmpty_shouldThrowTimeFormatException() {
+    void validateTimeValues_checkWhetherTheInputHoursAreNotEmpty_shouldThrowTimeFormatException() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(EMPTY).minutes(FOURTEEN).seconds(ZERO).build();
 
@@ -28,7 +28,7 @@ public class TimeValidatorTest {
 
     @Test
     @DisplayName("Throw Time Format Exception : if the input minutes are empty")
-    public void validateTimeValues_checkWhetherTheInputMinutesAreNotEmpty_shouldThrowTimeFormatException() {
+    void validateTimeValues_checkWhetherTheInputMinutesAreNotEmpty_shouldThrowTimeFormatException() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(ZERO).minutes(EMPTY).seconds(ZERO).build();
 
@@ -37,7 +37,7 @@ public class TimeValidatorTest {
 
     @Test
     @DisplayName("Throw Time Format Exception : if the input seconds are empty")
-    public void validateTimeValues_checkWhetherTheInputSecondsAreNotEmpty_shouldThrowTimeFormatException() {
+    void validateTimeValues_checkWhetherTheInputSecondsAreNotEmpty_shouldThrowTimeFormatException() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(ZERO).minutes(ZERO).seconds(EMPTY).build();
 
@@ -46,7 +46,7 @@ public class TimeValidatorTest {
 
     @Test
     @DisplayName("Throw Time Format Exception : if the input hour is greater than 23")
-    public void validateTimeValues_passHourGreaterThan23_shouldThrowTimeFormatException() {
+    void validateTimeValues_passHourGreaterThan23_shouldThrowTimeFormatException() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(SEVENTY).minutes(ZERO).seconds(ZERO).build();
 
@@ -55,7 +55,7 @@ public class TimeValidatorTest {
 
     @Test
     @DisplayName("Throw Time Format Exception : if the input hour is less than 0")
-    public void convertToBerlinTime_passHourLessThanZero_shouldThrowTimeFormatException() {
+    void convertToBerlinTime_passHourLessThanZero_shouldThrowTimeFormatException() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(MINUS_ONE).minutes(ZERO).seconds(ZERO).build();
 
@@ -64,7 +64,7 @@ public class TimeValidatorTest {
 
     @Test
     @DisplayName("Throw Time Format Exception : if the input minute is greater than 59")
-    public void convertToBerlinTime_passMinuteGreaterThan59_shouldThrowTimeFormatException() {
+    void convertToBerlinTime_passMinuteGreaterThan59_shouldThrowTimeFormatException() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(ZERO).minutes(SEVENTY).seconds(ZERO).build();
 
@@ -73,7 +73,7 @@ public class TimeValidatorTest {
 
     @Test
     @DisplayName("Throw Time Format Exception : if the input minute is less than 0")
-    public void convertToBerlinTime_passMinuteLessThanZero_shouldThrowTimeFormatException() {
+    void convertToBerlinTime_passMinuteLessThanZero_shouldThrowTimeFormatException() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(ZERO).minutes(MINUS_ONE).seconds(ZERO).build();
 
@@ -82,7 +82,7 @@ public class TimeValidatorTest {
 
     @Test
     @DisplayName("Throw Time Format Exception : if the input second is greater than 59")
-    public void convertToBerlinTime_passSecondGreaterThan59_shouldThrowTimeFormatException() {
+    void convertToBerlinTime_passSecondGreaterThan59_shouldThrowTimeFormatException() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(ZERO).minutes(ZERO).seconds(SEVENTY).build();
 
@@ -91,7 +91,7 @@ public class TimeValidatorTest {
 
     @Test
     @DisplayName("Throw Time Format Exception : if the input second is less than 0")
-    public void convertToBerlinTime_passSecondLessThanZero_shouldThrowTimeFormatException() {
+    void convertToBerlinTime_passSecondLessThanZero_shouldThrowTimeFormatException() {
 
         TimeComponent timeComponent = TimeComponent.builder().hours(ZERO).minutes(ZERO).seconds(MINUS_ONE).build();
 
